@@ -10,6 +10,22 @@ export function GlobalStyles() {
           margin: 0;
           font-family: Jost;
         }
+
+        h1 {
+          font-size: 64px;
+        }
+
+        h2 {
+          font-size: 40px;
+        }
+
+        h3 {
+          font-size: 24px;
+        }
+
+        p {
+          font-size: 16px;
+        }
       `}
     />
   )

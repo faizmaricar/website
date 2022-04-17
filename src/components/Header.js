@@ -3,11 +3,12 @@ import { useLocation } from "@reach/router"
 import { css } from "@emotion/react"
 import styled from "@emotion/styled"
 
+import Container from "./Container"
+
 const headerStyles = ({ theme, show }) =>
   css({
     backgroundColor: theme.colors.primary,
     color: "#fff",
-    padding: `${theme.spaces[2]}px ${theme.spaces[4]}px`,
     fontWeight: 700,
     position: "fixed",
     width: "100%",
@@ -34,7 +35,9 @@ export function Header() {
 
   return (
     <StyledHeader show={show}>
-      <h4>Faiz Maricar</h4>
+      <Container>
+        <h4>Faiz Maricar</h4>
+      </Container>
     </StyledHeader>
   )
 }

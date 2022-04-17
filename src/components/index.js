@@ -1,3 +1,4 @@
+export * from "./Container"
 export * from "./GlobalStyles"
 export * from "./Header"
 export * from "./Section"
