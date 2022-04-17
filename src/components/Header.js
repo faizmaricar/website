@@ -16,7 +16,7 @@ const headerStyles = ({ theme, show }) =>
     transition: "top 200ms",
   })
 
-const StyledHeader = styled.section`
+const StyledHeader = styled.header`
   ${headerStyles}
 `
 export function Header() {

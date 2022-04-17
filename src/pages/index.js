@@ -1,5 +1,4 @@
 import React from "react"
-
 import { Section, Seo } from "../components"
 import { About } from "../sections"
 
