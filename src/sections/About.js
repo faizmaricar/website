@@ -3,7 +3,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import { css } from "@emotion/react"
 import styled from "@emotion/styled"
 
-import { Column, Container, Row, Section } from "../components"
+import { Column, Container, Row, Section, Socials } from "../components"
 import { useSiteMetadata } from "../hooks"
 
 const Title = styled.h2`
@@ -19,6 +19,7 @@ const Description = styled.h3`
   ${({ theme }) => css`
     text-align: center;
     font-weight: 100;
+    margin-bottom: ${theme.spaces[4]}px;
     ${theme.breakpoints.sm} {
       text-align: initial;
     }
@@ -43,6 +44,7 @@ export function About() {
           <Column xs={4} sm={6} md={8} lg={8} xl={8}>
             <Title>Hi, my name is Faiz Maricar</Title>
             <Description>{defaultDescription}</Description>
+            <Socials />
           </Column>
         </Row>
       </Container>

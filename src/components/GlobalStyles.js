@@ -26,6 +26,15 @@ export function GlobalStyles() {
         p {
           font-size: 16px;
         }
+
+        li {
+          list-style: none;
+        }
+
+        a {
+          color: inherit;
+          text-decoration: inherit;
+        }
       `}
     />
   )
