@@ -1,4 +1,5 @@
 import React from "react"
+import { useLocation } from "@reach/router"
 import { css } from "@emotion/react"
 import styled from "@emotion/styled"
 
@@ -18,12 +19,14 @@ const StyledHeader = styled.section`
   ${headerStyles}
 `
 export function Header() {
-  const [show, setShow] = React.useState(false)
+  const { pathname } = useLocation()
+  const notInHomePage = pathname !== "/"
+  const [show, setShow] = React.useState(notInHomePage)
 
   React.useEffect(() => {
     const handleScroll = () => {
       const { scrollY, innerHeight } = window
-      setShow(scrollY >= innerHeight)
+      setShow(scrollY >= innerHeight || notInHomePage)
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
