@@ -1,29 +1,50 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import { Container, Section } from "../components"
-import styled from "@emotion/styled"
 import { css } from "@emotion/react"
+import styled from "@emotion/styled"
 
-const imagecontainerStyles = ({ theme }) => css``
-const StyledImageContainer = styled.div`
-  ${imagecontainerStyles}
+import { Column, Container, Row, Section } from "../components"
+import { useSiteMetadata } from "../hooks"
+
+const Title = styled.h2`
+  ${({ theme }) => css`
+    text-align: center;
+    ${theme.breakpoints.sm} {
+      text-align: initial;
+    }
+  `}
 `
+
+const Description = styled.h3`
+  ${({ theme }) => css`
+    text-align: center;
+    font-weight: 100;
+    ${theme.breakpoints.sm} {
+      text-align: initial;
+    }
+  `}
+`
+
 export function About() {
+  const { defaultDescription } = useSiteMetadata()
   return (
     <Section>
       <Container>
-        <div>
-          <StaticImage
-            imgStyle={{
-              borderRadius: "50%",
-              width: 200,
-              height: "auto",
-              margin: "0 auto",
-            }}
-            src="../images/profile.jpg"
-            alt="profile"
-          />
-        </div>
+        <Row>
+          <Column xs={2} xsOffset={1} sm={2} md={4} lg={4} xl={4}>
+            <StaticImage
+              imgStyle={{
+                borderRadius: "50%",
+              }}
+              src="../images/profile.jpg"
+              alt="profile"
+            />
+          </Column>
+          <Column xs={4} sm={6} md={8} lg={8} xl={8}>
+            <Title>Hi, my name is Faiz Maricar</Title>
+            <Description>{defaultDescription}</Description>
+          </Column>
+        </Row>
       </Container>
     </Section>
   )

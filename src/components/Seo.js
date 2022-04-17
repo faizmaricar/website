@@ -1,12 +1,12 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import { useLocation } from '@reach/router';
+import React from "react"
+import { Helmet } from "react-helmet"
+import { useLocation } from "@reach/router"
 
-import useSiteMetadata from '../hooks/useSiteMetadata';
+import { useSiteMetadata } from "../hooks"
 
 export function Seo(props) {
-  const { title, description, image, content } = props;
-  const { pathname } = useLocation();
+  const { title, description, image, content } = props
+  const { pathname } = useLocation()
 
   const {
     defaultTitle,
@@ -16,14 +16,14 @@ export function Seo(props) {
     defaultImage,
     twitterUsername,
     htmlAttributes,
-  } = useSiteMetadata();
+  } = useSiteMetadata()
 
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: image || `${siteUrl}${defaultImage}`,
     url: `${siteUrl}${pathname}`,
-  };
+  }
   return (
     <Helmet
       title={seo.title}
@@ -49,7 +49,7 @@ export function Seo(props) {
       )}
       {seo.image && <meta name="twitter:image" content={seo.image} />}
     </Helmet>
-  );
+  )
 }
 
-export default Seo;
+export default Seo

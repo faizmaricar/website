@@ -31,7 +31,7 @@ export function Header() {
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [show])
+  }, [show, notInHomePage])
 
   return (
     <StyledHeader show={show}>
