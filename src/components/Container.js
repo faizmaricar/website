@@ -3,9 +3,9 @@ import { css } from "@emotion/react"
 import styled from "@emotion/styled"
 
 const containerStyles = ({ theme }) => css`
+  height: 100%;
   margin: 0 ${theme.spaces[4]}px;
   padding: ${theme.spaces[2]}px 0;
-
   ${theme.breakpoints.sm} {
     margin: 0 ${theme.spaces[8]}px;
   }

@@ -3,12 +3,14 @@ import { StaticImage } from "gatsby-plugin-image"
 import { css } from "@emotion/react"
 import styled from "@emotion/styled"
 
-import { Column, Container, Row, Section, Socials } from "../components"
+import { Button, Column, Container, Row, Section, Socials } from "../components"
 import { useSiteMetadata } from "../hooks"
 
 const Title = styled.h2`
   ${({ theme }) => css`
     text-align: center;
+    color: ${theme.colors.primary};
+    margin-bottom: ${theme.spaces[4]}px;
     ${theme.breakpoints.sm} {
       text-align: initial;
     }
@@ -18,10 +20,10 @@ const Title = styled.h2`
 const Description = styled.h3`
   ${({ theme }) => css`
     text-align: center;
-    font-weight: 100;
+    font-weight: 400;
     margin-bottom: ${theme.spaces[4]}px;
     ${theme.breakpoints.sm} {
-      text-align: initial;
+      text-align: justify;
     }
   `}
 `
@@ -45,6 +47,9 @@ export function About() {
             <Title>Hi, my name is Faiz Maricar</Title>
             <Description>{defaultDescription}</Description>
             <Socials />
+            <Button onClick={() => console.log("clicked")}>
+              Check out my latest blog
+            </Button>
           </Column>
         </Row>
       </Container>

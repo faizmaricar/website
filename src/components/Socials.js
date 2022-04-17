@@ -15,7 +15,7 @@ import { useSiteMetadata } from "../hooks"
 const listStyles = ({ theme }) =>
   css`
     text-align: center;
-
+    margin-bottom: ${theme.spaces[4]}px;
     ${theme.breakpoints.sm} {
       text-align: initial;
     }
@@ -27,6 +27,7 @@ const linkStyles = ({ theme }) =>
     display: inline-block;
     text-transform: uppercase;
     font-weight: 700;
+    color: ${theme.colors.primary};
     &: hover {
       cursor: pointer;
     }
