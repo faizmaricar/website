@@ -22,6 +22,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-fontawesome-css`,
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {

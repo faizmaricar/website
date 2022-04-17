@@ -10,11 +10,14 @@ const buttonStyles = ({ theme }) => css`
   color: white;
   text-transform: uppercase;
   font-weight: 800;
-  cursor: pointer;
 `
 
 const StyledButton = styled.button`
   ${buttonStyles}
+  &:hover {
+    cursor: pointer;
+    background-color: ${({ theme }) => theme.colors.secondary.l1};
+  }
 `
 
 export function Button(props) {
