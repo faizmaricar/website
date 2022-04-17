@@ -1,12 +1,15 @@
 import React from "react"
-import Seo from "../components/Seo";
+import { Header, Section, Seo } from "../components"
 
 const IndexPage = () => {
   return (
-  <>
-    <Seo/>
-    <h1 style={{fontFamily: 'Jost'}}>Faiz Maricar</h1>
-  </>
-)}
+    <>
+      <Seo />
+      <Header />
+      <Section />
+      <Section background="#ffffff" />
+    </>
+  )
+}
 
 export default IndexPage

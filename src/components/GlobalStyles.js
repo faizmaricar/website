@@ -8,6 +8,7 @@ export function GlobalStyles() {
         * {
           padding: 0;
           margin: 0;
+          font-family: Jost;
         }
       `}
     />
