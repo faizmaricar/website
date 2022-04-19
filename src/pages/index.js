@@ -1,13 +1,13 @@
 import React from "react"
-import { Section, Seo } from "../components"
-import { About } from "../sections"
+import { Seo } from "../components"
+import { About, Blog } from "../sections"
 
 const IndexPage = () => {
   return (
     <>
       <Seo />
       <About />
-      <Section background="#ffffff" />
+      <Blog />
     </>
   )
 }

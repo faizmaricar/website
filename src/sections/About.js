@@ -30,6 +30,12 @@ const Description = styled.h3`
 
 export function About() {
   const { defaultDescription } = useSiteMetadata()
+
+  const handleClick = () => {
+    document
+      .getElementById("blog")
+      .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" })
+  }
   return (
     <Section>
       <Container>
@@ -47,9 +53,7 @@ export function About() {
             <Title>Hi, my name is Faiz Maricar</Title>
             <Description>{defaultDescription}</Description>
             <Socials />
-            <Button onClick={() => console.log("clicked")}>
-              Check out my latest blog
-            </Button>
+            <Button onClick={handleClick}>Check out my latest blog</Button>
           </Column>
         </Row>
       </Container>
