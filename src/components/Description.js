@@ -6,6 +6,9 @@ import Column from "./Column"
 
 const StyledDescription = styled.p`
   text-align: justify;
+  ${props => props.theme.breakpoints.sm} {
+    text-align: center;
+  }
 `
 export function Description() {
   const { defaultDescription } = useSiteMetadata()
