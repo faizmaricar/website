@@ -1,9 +1,11 @@
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from "gatsby"
 
 const query = graphql`
   query SEO {
     site {
       siteMetadata {
+        name
+        position
         defaultTitle: title
         titleTemplate
         defaultDescription: description
@@ -21,12 +23,12 @@ const query = graphql`
       }
     }
   }
-`;
+`
 
 export function useSiteMetadata() {
-  const { site } = useStaticQuery(query);
+  const { site } = useStaticQuery(query)
 
-  return site.siteMetadata;
+  return site.siteMetadata
 }
 
-export default useSiteMetadata;
+export default useSiteMetadata

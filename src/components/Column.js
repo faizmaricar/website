@@ -1,24 +1,27 @@
-import React from "react"
-import styled from "@emotion/styled"
 import { css } from "@emotion/react"
+import styled from "@emotion/styled"
+import React from "react"
 
 const columnStyles = props => {
-  const { theme, xs = 1, sm = 1, md = 1, lg = 1, xl = 1, xsOffset = 0 } = props
+  const {
+    theme: { spaces, breakpoints },
+    xs = 4,
+    xsOffset = 0,
+    sm = 8,
+    smOffset = 0,
+    md = 12,
+    mdOffset = 0,
+  } = props
   return css`
-    padding: ${theme.spaces[2]}px 0;
     grid-column: ${xsOffset + 1} / ${xs + xsOffset + 1};
-    ${theme.breakpoints.sm} {
-      padding: ${theme.spaces[4]}px 0;
-      grid-column: span ${sm};
+    padding: ${spaces(2)}px 0;
+
+    ${breakpoints.sm} {
+      grid-column: ${smOffset + 1} / ${sm + smOffset + 1};
     }
-    ${theme.breakpoints.md} {
-      grid-column: span ${md};
-    }
-    ${theme.breakpoints.lg} {
-      grid-column: span ${lg};
-    }
-    ${theme.breakpoints.xl} {
-      grid-column: span ${xl};
+
+    ${breakpoints.md} {
+      grid-column: ${mdOffset + 1} / ${md + mdOffset + 1};
     }
   `
 }

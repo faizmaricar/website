@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "@emotion/styled"
-import { css } from "@emotion/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faLinkedin,
@@ -9,34 +8,20 @@ import {
   faTwitch,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons"
-
 import { useSiteMetadata } from "../hooks"
 
-const listStyles = ({ theme }) =>
-  css`
-    text-align: center;
-    margin-bottom: ${theme.spaces[4]}px;
-    ${theme.breakpoints.sm} {
-      text-align: initial;
-    }
-  `
-const linkStyles = ({ theme }) =>
-  css`
-    margin-right: ${theme.spaces[4]}px;
-    margin-bottom: ${theme.spaces[2]}px;
+const StyledSocials = styled.ul`
+  text-align: center;
+  & li {
     display: inline-block;
-    text-transform: uppercase;
     font-weight: 700;
-    color: ${theme.colors.primary};
+    margin-right: 12px;
+    padding: 8px 0;
+    text-transform: uppercase;
     &: hover {
       cursor: pointer;
     }
-  `
-const StyledList = styled.ul`
-  ${listStyles}
-`
-const StyledLink = styled.li`
-  ${linkStyles}
+  }
 `
 
 export function Socials() {
@@ -44,17 +29,17 @@ export function Socials() {
     useSiteMetadata()
 
   const socialMediaIcons = [
+    { icon: faTwitch, url: twitchUrl },
     { icon: faTwitter, url: twitterUrl },
     { icon: faLinkedin, url: linkedinUrl },
-    { icon: faTwitch, url: twitchUrl },
     { icon: faYoutube, url: youtubeUrl },
     { icon: faGithub, url: githubUrl },
   ]
 
   return (
-    <StyledList>
+    <StyledSocials>
       {socialMediaIcons.map(({ icon, url }) => (
-        <StyledLink key={icon.iconName}>
+        <li key={icon.iconName}>
           <a
             href={url}
             aria-label={icon.iconName}
@@ -62,12 +47,11 @@ export function Socials() {
             rel="noopener noreferrer"
           >
             <FontAwesomeIcon icon={icon} />
-            &nbsp;
-            {icon.iconName}
+            &nbsp;{icon.iconName}
           </a>
-        </StyledLink>
+        </li>
       ))}
-    </StyledList>
+    </StyledSocials>
   )
 }
 

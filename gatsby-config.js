@@ -2,6 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `My personal website`,
     titleTemplate: "Faiz Maricar· %s",
+    name: "Faiz Maricar",
+    position: "Software Engineer",
     image: "/profile.jpg",
     description: `I'm a software engineer mainly working on web
     and mobile development. If you'd like to keep up with what I'm up to, follow me on my socials.`,

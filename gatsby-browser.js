@@ -1,11 +1,11 @@
 import React from "react"
-import { GlobalStyles, ThemeProvider, Header } from "./src/components"
+import { GlobalStyles, ThemeProvider, Seo } from "./src/components"
 
 export function wrapPageElement({ element }) {
   return (
     <ThemeProvider>
       <GlobalStyles />
-      <Header />
+      <Seo />
       {element}
     </ThemeProvider>
   )
