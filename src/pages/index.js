@@ -7,22 +7,23 @@ import {
   Position,
   Socials,
   Description,
+  Seo,
 } from "../components"
-import { useSiteMetadata } from "../hooks"
 
 const IndexPage = () => {
-  const site = useSiteMetadata()
-  console.log(site)
   return (
-    <Grid>
-      <Picture />
-      <Column md={8} mdOffset={2}>
-        <Name />
-        <Position />
-        <Socials />
-        <Description />
-      </Column>
-    </Grid>
+    <div>
+      <Seo />
+      <Grid>
+        <Picture />
+        <Column md={8} mdOffset={2}>
+          <Name />
+          <Position />
+          <Socials />
+          <Description />
+        </Column>
+      </Grid>
+    </div>
   )
 }
 
