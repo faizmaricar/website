@@ -9,17 +9,17 @@ export function Seo(props) {
   const { pathname } = useLocation()
 
   const {
-    defaultTitle,
     titleTemplate,
     defaultDescription,
     siteUrl,
     defaultImage,
     twitterUsername,
     htmlAttributes,
+    position,
   } = useSiteMetadata()
 
   const seo = {
-    title: title || defaultTitle,
+    title: title || position,
     description: description || defaultDescription,
     image: image || `${siteUrl}${defaultImage}`,
     url: `${siteUrl}${pathname}`,
