@@ -26,10 +26,25 @@ module.exports = {
     `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-netlify-cms`,
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts-v2`,
       options: {
-        fonts: [`jost\:100,200,300,400,400i,500, 600, 700, 800, 900`],
-        display: "swap",
+        fonts: [
+          {
+            family: "Jost",
+            weights: [
+              "100",
+              "200",
+              "300",
+              "400",
+              "400i",
+              "500",
+              "600",
+              "700",
+              "800",
+              "900",
+            ],
+          },
+        ],
       },
     },
     {
