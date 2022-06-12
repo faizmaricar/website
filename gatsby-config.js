@@ -6,7 +6,7 @@ module.exports = {
     position: "Software Engineer",
     image: "/profile.jpg",
     description: `I'm a software engineer mainly working on web
-    and mobile development. In my spare time, I make videos. If you'd like to keep up with what I'm up to, follow me on my socials.`,
+    and mobile development. In my spare time, I make videos and blogs. If you'd like to keep up with what I'm up to, follow me on my socials.`,
     url: "https://www.faizmaricar.com",
     twitterUsername: "@faizmaricar",
     twitterUrl: "https://twitter.com/FaizMaricar",

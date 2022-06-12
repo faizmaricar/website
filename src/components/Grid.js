@@ -4,7 +4,6 @@ import React from "react"
 const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: ${props => props.theme.spaces(8)}px;
   column-gap: ${props => props.theme.spaces(4)}px;
   justify-content: center;
   grid-auto-flow: column;
