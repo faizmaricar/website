@@ -1,5 +1,9 @@
 const axios = require("axios")
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 exports.sourceNodes = async ({
   actions,
   createNodeId,
@@ -9,8 +13,10 @@ exports.sourceNodes = async ({
     Accept: "application/json",
   }
 
+  const { YT_API_KEY, YT_CHANNEL_ID } = process.env
+
   let reqOptions = {
-    url: "https://www.googleapis.com/youtube/v3/search?channelId=UCOsENEH0kMZ3-L2dqeCyXAA&order=date&part=snippet&type=video&maxResults=8&key=AIzaSyCf3a84y9pym-ukDKoUBlp0x-8Vsmw1JmY",
+    url: `https://www.googleapis.com/youtube/v3/search?channelId=${YT_CHANNEL_ID}&order=date&part=snippet&type=video&maxResults=8&key=${YT_API_KEY}`,
     method: "GET",
     headers: headersList,
   }
