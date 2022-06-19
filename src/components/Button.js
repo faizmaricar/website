@@ -10,6 +10,7 @@ const buttonStyles = ({ theme, fullwidth }) =>
     color: ${theme.colors.text};
     padding: ${theme.spaces(4)}px;
     font-weight: 700;
+    font-size: 16px;
     text-transform: uppercase;
     cursor: pointer;
     ${fullwidth && "width: 100%;"}

@@ -6,12 +6,11 @@ exports.sourceNodes = async ({
   createContentDigest,
 }) => {
   let headersList = {
-    Accept: "*/*",
-    Authorization: "AIzaSyCf3a84y9pym-ukDKoUBlp0x-8Vsmw1JmY",
+    Accept: "application/json",
   }
 
   let reqOptions = {
-    url: "https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCOsENEH0kMZ3-L2dqeCyXAA&type=video&key=AIzaSyCf3a84y9pym-ukDKoUBlp0x-8Vsmw1JmY",
+    url: "https://www.googleapis.com/youtube/v3/search?channelId=UCOsENEH0kMZ3-L2dqeCyXAA&order=date&part=snippet&type=video&maxResults=8&key=AIzaSyCf3a84y9pym-ukDKoUBlp0x-8Vsmw1JmY",
     method: "GET",
     headers: headersList,
   }
@@ -24,6 +23,7 @@ exports.sourceNodes = async ({
     const { id } = item
     const itemMeta = {
       id: createNodeId(id),
+      videoUrl: `https://www.youtube.com/watch?v=${id}`,
       parent: null,
       children: [],
       internal: {

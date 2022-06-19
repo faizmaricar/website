@@ -29,10 +29,10 @@ export function About() {
           xs={4}
           sm={4}
           smOffset={2}
-          md={4}
-          mdOffset={4}
-          xl={4}
-          xlOffset={4}
+          md={6}
+          mdOffset={3}
+          xl={6}
+          xlOffset={3}
         >
           <Button fullwidth onClick={handleClick}>
             Check out my latest content
